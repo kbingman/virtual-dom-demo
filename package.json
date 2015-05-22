@@ -1,0 +1,31 @@
+{
+  "name": "starships",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start",
+    "build:js": "browserify src/js/app.js -t hoganify -t babelify > public/js/app.js",
+    "watch:js": "watchify -t hoganify -t babelify src/js/app.js -o public/js/app.js --debug",
+    "uglify": "uglifyjs public/js/app.js -o public/js/app.min.js",
+    "start": "serve public & npm run watch:js"
+  },
+  "author": "Keith Bingman",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^5.4.4",
+    "babelify": "^6.1.1",
+    "browserify": "^10.2.1",
+    "jquery": "^2.1.4",
+    "karma": "^0.12.32",
+    "karma-browserify": "^4.1.2",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-mocha": "^0.1.10",
+    "karma-sinon": "^1.0.4",
+    "karma-spec-reporter": "0.0.19",
+    "serve": "^1.4.0",
+    "uglifyjs": "^2.4.10",
+    "virtual-dom": "^2.0.1"
+  }
+}

@@ -1,0 +1,25 @@
+/* Minimal CSS */
+
+body {
+    padding: 20px;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+input[type=text] {
+    vertical-align: baseline;
+}
+
+button, input[type=submit] {
+    border-width: .1rem;
+}
+
+.controls {
+    padding: 1rem 0;
+}
+
+.increment {
+    vertical-align: middle;
+}
