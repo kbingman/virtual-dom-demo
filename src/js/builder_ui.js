@@ -43,6 +43,8 @@ var BuilderUI = {
             thrust: _ship.thrust
         }));
 
+        console.log(vdom);
+
         // Add some events to the parent
         // vdom.properties.oninput = this.listenForChange.bind(this);
 
@@ -69,7 +71,7 @@ var BuilderUI = {
         var newTree = this.render(_ship);
         var patches = diff(_vTree, newTree);
 
-        // console.log('render', +new Date());
+        console.log('render', +new Date());
         this.node = patch(this.node, patches);
         _vTree = newTree;
     },
