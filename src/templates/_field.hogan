@@ -1,0 +1,11 @@
+<div class="field">
+  <div class="label">
+      <label for="shipname">{{ key }}</label>
+  </div>
+  <div class="input">
+      <input name="{{ key }}"
+             value="{{ value }}"
+             placeholder="Please enter a {{ key }}"
+             id="ship{{ key }}">
+  </div>
+</div>

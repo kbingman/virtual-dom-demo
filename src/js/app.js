@@ -1,4 +1,4 @@
-import index from '../templates/index.hogan';
-import { BuilderUI } from './builder_ui';
+import { documentUI } from './document_ui';
 
-BuilderUI.initialize(document.body);
+// initialize Flight components
+documentUI.attachTo(document.body);

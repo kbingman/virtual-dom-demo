@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
+    "livereload": "livereload public",
     "build:js": "browserify src/js/app.js -t hoganify -t babelify > public/js/app.js",
+    "watch:css": "",
     "watch:js": "watchify -t hoganify -t babelify src/js/app.js -o public/js/app.js --debug",
     "uglify": "uglifyjs public/js/app.js -o public/js/app.min.js",
-    "start": "serve public & npm run watch:js"
+    "start": "serve public & npm run watch:js & livereload"
   },
   "author": "Keith Bingman",
   "license": "MIT",
@@ -16,6 +18,11 @@
     "babel": "^5.4.4",
     "babelify": "^6.1.1",
     "browserify": "^10.2.1",
+    "cuid": "^1.2.5",
+    "delorean": "^0.9.3",
+    "flightjs": "^1.5.0",
+    "hogan.js": "^3.0.2",
+    "hoganify": "^0.2.0",
     "jquery": "^2.1.4",
     "karma": "^0.12.32",
     "karma-browserify": "^4.1.2",
@@ -24,8 +31,11 @@
     "karma-mocha": "^0.1.10",
     "karma-sinon": "^1.0.4",
     "karma-spec-reporter": "0.0.19",
+    "livereload": "^0.3.7",
     "serve": "^1.4.0",
     "uglifyjs": "^2.4.10",
-    "virtual-dom": "^2.0.1"
+    "vdom-virtualize": "0.0.7",
+    "virtual-dom": "^2.0.1",
+    "watchify": "^3.2.1"
   }
 }

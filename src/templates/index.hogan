@@ -1,17 +1,21 @@
 <div data-container>
-    <h1>Spaceship Builder</h1>
-    <h2>{{ name }}</h2>
 
+  <h1>{{ name }}</h1>
+
+  <div class="field">
     <div class="label">
         <label for="shipname">Name</label>
     </div>
     <div class="input">
-        <input name="name" placeholder="Please enter a name" id="shipname">
+        <input name="name"
+               value="{{ ship.name }}"
+               placeholder="Please enter a name"
+               id="shipname">
     </div>
-    <div class="controls">
-        <label>Thrust</label>
-        <span>{{ thrust }}</span>
-        <button class="increment" name="thrust" data-increment="up">&uarr;</button>
-        <button class="increment" name="thrust" data-increment="down">&darr;</button>
-    </div>
+  </div>
+
+  {{# attributes }}
+  {{> increment }}
+  {{/ attributes }}
+
 </div>

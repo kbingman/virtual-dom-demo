@@ -17,9 +17,13 @@ button, input[type=submit] {
 }
 
 .controls {
-    padding: 1rem 0;
+    padding: 0;
 }
 
 .increment {
-    vertical-align: middle;
+    vertical-align: baseline;
+    padding: 0;
+    width: 2.4rem;
+    border-radius: 2px;
+    font-size: 1.4rem;
 }

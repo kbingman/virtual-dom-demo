@@ -1,0 +1,10 @@
+<div class="controls">
+  <label for="{{ key }}">{{ key }}</label>
+  <span class="value">{{ value }}</span>
+  <button class="increment" name="{{ key }}" data-increment="up">
+    &uarr;
+  </button>
+  <button class="increment" name="{{ key }}" data-increment="down">
+    &darr;
+  </button>
+</div>
