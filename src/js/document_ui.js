@@ -53,11 +53,9 @@ var documentUI = flight.component(withVDOM, function() {
     }, partials);
   };
 
-  this.update = function(e) {
+  this.update = function() {
     var html = this.render();
-    var vTree = this.virtualize(html);
-
-    this.updateUI(vTree);
+    this.updateUI(html);
   };
 
   this.after('initialize', function() {

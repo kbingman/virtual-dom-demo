@@ -5,8 +5,6 @@ import createElement from 'virtual-dom/create-element';
 
 import virtualize from 'vdom-virtualize';
 
-window.patch = patch;
-
 'use strict';
 
 function withVDOM() {
@@ -15,13 +13,11 @@ function withVDOM() {
     vTree: undefined
   });
 
-  this.virtualize = virtualize.fromHTML;
-
   /**
    * Initialize the DOM tree
    */
   this.after('initialize', function() {
-    this.attr.vTree = this.virtualize(this.render());
+    this.attr.vTree = virtualize.fromHTML(this.render());
     this.node = createElement(this.attr.vTree);
 
     document.body.appendChild(this.node);
@@ -30,7 +26,8 @@ function withVDOM() {
   /**
    * This does the actual diffing and updating
    */
-  this.updateUI = function(newTree) {
+  this.updateUI = function(html) {
+    var newTree = virtualize.fromHTML(html);
     var patches = diff(this.attr.vTree, newTree);
 
     this.node = patch(this.node, patches);

@@ -7,7 +7,8 @@ module.exports = function(config) {
     frameworks: ['mocha', 'browserify', 'chai', 'sinon'],
     // list of files / patterns to load in the browser
     files: [
-        'test/**/*.spec.js'
+      'node_modules/jquery/dist/jquery.js',
+      'test/**/*.spec.js'
     ],
     exclude: [],
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'

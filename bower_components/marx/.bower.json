@@ -1,0 +1,59 @@
+{
+  "name": "marx",
+  "version": "1.2.1",
+  "homepage": "https://github.com/mblode/marx",
+  "authors": [
+    "mblode <m.blode@gmail.com>"
+  ],
+  "description": "The stylish CSS reset.",
+  "main": [
+    "css/*.css",
+    "scss/*.scss"
+  ],
+  "keywords": [
+    "marx",
+    "karl",
+    "mblode",
+    "matthew blode",
+    "matt",
+    "blode",
+    "layout",
+    "framework",
+    "css",
+    "sass",
+    "scss",
+    "web",
+    "frontend",
+    "bootstrap",
+    "pure",
+    "markdown",
+    "format",
+    "classless"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "gulpfile.js",
+    "package.json",
+    "_site",
+    "_sass",
+    "_posts",
+    "index.html",
+    "components"
+  ],
+  "dependencies": {},
+  "_release": "1.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.1",
+    "commit": "0735faa265b68fcdd30ca9318e6b3e58ed75aa3e"
+  },
+  "_source": "git://github.com/mblode/marx.git",
+  "_target": "~1.2.1",
+  "_originalSource": "marx",
+  "_direct": true
+}
