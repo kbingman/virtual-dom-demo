@@ -13,12 +13,12 @@ describe('Ship Actions', function() {
   });
 
   it('should call dispatch on increment', function() {
-    ShipActions.increment({});
+    ShipActions.increment({ key: 'ftl' });
     expect(spy.called).to.be.true;
   });
 
   it('should call dispatch on update', function() {
-    ShipActions.update({});
+    ShipActions.update({ name: '' });
     expect(spy.called).to.be.true;
   });
 

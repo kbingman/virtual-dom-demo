@@ -20,7 +20,7 @@ describe('Ship Store', function() {
     });
 
     it('should fire a change event on increment', function() {
-      ShipStore.increaseAttribute({
+      ShipStore.incrementAttribute({
         key: 'ftl',
         direction: 'up'
       });
@@ -40,7 +40,7 @@ describe('Ship Store', function() {
 
   describe('Increment', function() {
     it('should increment values up', function() {
-      ShipStore.increaseAttribute({
+      ShipStore.incrementAttribute({
         key: 'ftl',
         direction: 'up'
       });
@@ -50,7 +50,7 @@ describe('Ship Store', function() {
 
     it('should increment values down', function() {
       ShipStore.state.ftl = 5;
-      ShipStore.increaseAttribute({
+      ShipStore.incrementAttribute({
         key: 'ftl',
         direction: 'down'
       });
@@ -59,7 +59,7 @@ describe('Ship Store', function() {
     });
 
     it('should protect against negative values', function() {
-      ShipStore.increaseAttribute({
+      ShipStore.incrementAttribute({
         key: 'ftl',
         direction: 'down'
       });
