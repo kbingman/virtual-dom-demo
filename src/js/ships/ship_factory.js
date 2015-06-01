@@ -2,10 +2,9 @@ import 'core-js';
 import cuid from 'cuid';
 
 import presets from './presets/ship_presets';
-import weapons from './presets/weapon_presets';
 
-import { utils } from './utils';
-import { weaponFactory } from './weapon_factory';
+import { utils } from '../utils';
+import { baseWeapon } from './weapon_factory';
 
 const SHIP_BRIDGE = 0.02;
 const MIN_BRIDGE = 20;
@@ -22,23 +21,13 @@ let baseShip = {
   passengers: 0,
   cuid: cuid(),
 
-  weapons: {
-    primary: {},
-    batteries: [],
-    pointDefense: []
-  },
-
-  addPrimaryWeapon (id) {
-    this.weapons.primary = weapons.primary[id];
-  },
-
-  addWeapon (type, id, count) {
-    var w = weapons[type][id];
-    if (!w) {
-      return;
+  init () {
+    this.weapons = {
+      primary: undefined,
+      batteries: [],
+      pointDefense: []
     }
-    w.count = count || 1;
-    this.weapons[type].push(w);
+    this.update();
   },
 
   calculateMass () {
@@ -46,6 +35,9 @@ let baseShip = {
     var thrust = presets.thrust[this.thrust] * 0.01 * this.mass;
     var reactor = this.reactor * presets.reactor * 0.01 * this.mass;
     var armor = this.armor + presets.armor + 0.01 * this.mass;
+
+    var batteries = this.weapons.batteries.reduce(utils.aggregate, 0);
+    var pointDefense = this.weapons.pointDefense.reduce(utils.aggregate, 0);
 
     var fuel = 0;
 
@@ -59,6 +51,10 @@ let baseShip = {
       bridge: utils.round(this.calculateBridge(), 0),
       armor: utils.round(armor),
       fuel: utils.round(fuel),
+      primaryWeapon: this.weapons.primary && this.weapons.primary.mass ?
+        this.weapons.primary.mass : 0,
+      batteries: batteries || 0,
+      pointDefense: pointDefense || 0
     };
   },
 
@@ -91,21 +87,14 @@ let baseShip = {
     return utils.round(total);
   },
 
-  validate () {
-    if (this.ftl > this.reactor) {
-      this.reactor = this.ftl;
-    }
-    if (this.thrust > this.reactor) {
-      this.reactor = this.thrust;
-    }
-  },
-
   update (options) {
     options = options || {};
 
     Object.keys(options).forEach(function(key) {
       this[key] = options[key];
     }, this);
+
+    this.availableWeapons = this.calculateAvailableWeapons();
     this.validate();
 
     this.isSmallCraft = this.mass < 100;
@@ -113,15 +102,26 @@ let baseShip = {
     this.totalMass = this.calculateTotal();
     this.calculateEP();
     this.remainingMass = utils.round(this.mass - this.totalMass);
+  },
+
+  validate () {
+    if (this.ftl > this.reactor) {
+      this.reactor = this.ftl;
+    }
+    if (this.thrust > this.reactor) {
+      this.reactor = this.thrust;
+    }
   }
+
 };
 
 let shipFactory = function shipFactory(options) {
-  var ship = Object.assign(Object.create(baseShip), options);
-
-  ship.update();
+  var ship = Object.assign(Object.create(baseShip), baseWeapon, options);
+  ship.init();
 
   return ship;
 };
+
+window.shipFactory = shipFactory;
 
 export { shipFactory }

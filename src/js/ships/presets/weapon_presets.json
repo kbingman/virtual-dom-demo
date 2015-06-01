@@ -1,27 +1,27 @@
 {
-  "primary": {
-    "1":  { "name": "Railgun", "cost": 1500, "ep": 500, "mass": 1000 },
-    "2":  { "name": "Railgun", "cost": 2500, "ep": 500, "mass": 2000 },
-    "3":  { "name": "Railgun", "cost": 4200, "ep": 500, "mass": 3000 },
-    "4":  { "name": "Railgun", "cost": 5500, "ep": 500, "mass": 5000 },
-    "5":  { "name": "Mass Driver", "cost": 3500, "ep": 500, "mass": 1200 },
-    "6":  { "name": "Mass Driver", "cost": 5500, "ep": 500, "mass": 2500 },
-    "7":  { "name": "Mass Driver", "cost": 8000, "ep": 1000, "mass": 5000 },
-    "8":  { "name": "Ion Gun", "cost": 5000, "ep": 800, "mass": 1500 },
-    "9":  { "name": "Ion Gun", "cost": 7000, "ep": 1200, "mass": 3500 },
-    "10": { "name": "Ion Gun", "cost": 10000, "ep": 1500, "mass": 8000 }
-  },
-  "batteries": {
-    "1": { "name": "Missile Tubes", "cost": 30, "ep": 2 },
-    "3": { "name": "Railgun", "cost": 40, "ep": 40 },
-    "4": { "name": "Coilgun", "cost": 40, "ep": 50 }
-  },
-  "pointDefense": {
-    "1": { "name": "Missle", "cost": 0.75, "ep": 0 },
-    "2": { "name": "Projectile", "cost": 0.75, "ep": 0 },
-    "3": { "name": "Brilliant Pebbles", "cost": 0.75, "ep": 0 },
-    "4": { "name": "Pulse Laser", "cost": 0.75, "ep": 1 },
-    "5": { "name": "Railgun", "cost": 0.75, "ep": 2 },
-    "6": { "name": "Coilgun", "cost": 0.75, "ep": 3 }
-  }
+  "primary": [
+    { "id": 1, "name": "Railgun", "cost": 1500, "ep": 500, "mass": 1000},
+    { "id": 2, "name": "Railgun", "cost": 2500, "ep": 500, "mass": 2000},
+    { "id": 3, "name": "Railgun", "cost": 4200, "ep": 500, "mass": 3000},
+    { "id": 4, "name": "Railgun", "cost": 5500, "ep": 500, "mass": 5000},
+    { "id": 5, "name": "Mass Driver", "cost": 3500, "ep": 500, "mass": 1200},
+    { "id": 6, "name": "Mass Driver", "cost": 5500, "ep": 500, "mass": 2500},
+    { "id": 7, "name": "Mass Driver", "cost": 8000, "ep": 1000, "mass": 5000},
+    { "id": 8, "name": "Ion Gun", "cost": 5000, "ep": 800, "mass": 1500},
+    { "id": 9, "name": "Ion Gun", "cost": 7000, "ep": 1200, "mass": 3500},
+    { "id": 10, "name": "Ion Gun", "cost": 10000, "ep": 1500, "mass": 8000}
+  ],
+  "batteries": [
+    { "id": 1, "name": "Missile Tubes", "cost": 30, "ep": 2, "mass": 100 },
+    { "id": 2, "name": "Brilliant Pebble", "cost": 0.75, "ep": 0, "mass": 100 },
+    { "id": 3, "name": "Railgun", "cost": 40, "ep": 40, "mass": 100 },
+    { "id": 4, "name": "Coilgun", "cost": 40, "ep": 50, "mass": 100 }
+  ],
+  "pointDefense": [
+    { "id": 1, "name": "Missle", "cost": 0.75, "ep": 0, "mass": 1 },
+    { "id": 2, "name": "Projectile", "cost": 0.75, "ep": 0, "mass": 1 },
+    { "id": 3, "name": "Pulse Laser", "cost": 0.75, "ep": 1, "mass": 1 },
+    { "id": 4, "name": "Railgun", "cost": 0.75, "ep": 2, "mass": 1 },
+    { "id": 5, "name": "Coilgun", "cost": 0.75, "ep": 3, "mass": 1 }
+  ]
 }
