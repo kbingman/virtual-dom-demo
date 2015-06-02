@@ -17,7 +17,7 @@ var documentUI = flight.component(withVDOM, function() {
   });
 
   this.updateAttributes = function(e) {
-    var attr = {}
+    var attr = {};
     attr[e.target.name] = e.target.value;
 
     ShipActions.update(attr);
@@ -30,7 +30,7 @@ var documentUI = flight.component(withVDOM, function() {
     });
   };
 
-  this.render = function(ship) {
+  this.render = function() {
     var ship = Dispatcher.getStore('shipStore');
     var partials = {
       field: fieldPartial,
@@ -72,4 +72,4 @@ var documentUI = flight.component(withVDOM, function() {
   });
 });
 
-export { documentUI }
+export { documentUI };

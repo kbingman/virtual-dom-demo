@@ -3,7 +3,7 @@ import { ShipStore } from './stores/ship_store';
 
 var Dispatcher = Flux.createDispatcher({
 
-  getStores: function() {
+  getStores () {
     return {
       shipStore: ShipStore
     };
@@ -11,4 +11,4 @@ var Dispatcher = Flux.createDispatcher({
 
 });
 
-export { Dispatcher }
+export { Dispatcher };

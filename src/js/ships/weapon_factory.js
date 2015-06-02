@@ -15,7 +15,7 @@ let baseWeapon = {
     return {
       batteries: Math.ceil(this.mass / 1000),
       pointDefense: Math.ceil(this.mass / 100)
-    }
+    };
   },
 
   removeWeapon (type, id) {
@@ -54,6 +54,6 @@ let baseWeapon = {
     t.count = count;
     // this.update();
   }
-}
+};
 
-export { baseWeapon }
+export { baseWeapon };

@@ -12,4 +12,4 @@ var ShipActions = {
 
 };
 
-export { ShipActions }
+export { ShipActions };

@@ -40,4 +40,4 @@ var ShipStore = Flux.createStore({
 
 });
 
-export { ShipStore }
+export { ShipStore };

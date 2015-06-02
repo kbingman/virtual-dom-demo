@@ -1,0 +1,11 @@
+#.cpd.yaml
+path:
+  - fixtures/
+languages:
+  - javascript
+  - css
+  - go
+  - htmlmixed   # html mixed source like knockout.js templates
+exclude:
+  - "**/*.min.js"
+reporter: json

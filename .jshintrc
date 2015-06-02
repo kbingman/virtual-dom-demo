@@ -1,0 +1,9 @@
+{
+  "esnext": true,
+  "browser": true,
+  "undef": true,
+  "unused": true,
+  "predef": [
+    "module"
+  ]
+}

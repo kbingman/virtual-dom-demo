@@ -10,8 +10,13 @@ var utils = {
   aggregate (memo, item) {
     memo += item.count * item.mass;
     return memo;
+  },
+
+  aggregateCost (memo, item) {
+    memo += item.count * item.cost;
+    return memo;
   }
 
-}
+};
 
-export { utils }
+export { utils };
